@@ -1,0 +1,140 @@
+<HTML>
+  <head>
+	   <link href='./style.css' rel='stylesheet' type='text/css' media='screen, projection'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class='container'>
+      <h1 class='centre sanserif'>Book Recommendations Just for You</h1>
+      <p class='centre sanserif sectionText'>Choose from these categories below and we will send you information about books you will love</p>
+      <form method="post">
+      <div class='main'>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id="children" name="children">
+          <label for='children' class ='grey'>Children's</label>
+          <img class='icon'  src="./img/childrens.png"></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id="craftsHobbies" name="craftsHobbies">
+          <label for="craftsHobbies"  class ='grey'>Crafts & Hobbies</label>
+          <img class='icon'  src="./img/crafts.png"></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id="educationTeachers" name="educationTeachers">
+          <label for="educationTeachers"  class ='grey'>Education & Teachers</label>
+          <img class='icon'  src="./img/education.png"></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id="fooddrink" name='fooddrink'>
+          <label for="fooddrink"  class ='grey'>Food & Drink</label>
+          <img class='icon'  src="./img/food.png"></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id="gardening" name="gardening">
+          <label for="gardening" class ='grey'>Gardening</label>
+          <img class='icon'  src="./img/gardening.png"></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id='healthfitness' name='healthfitness'>
+          <label for='healthfitness' class ='grey'>Health & Fitness</label>
+          <img class='icon'  src="./img/health.png"></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id='historyreference' name='historyreference'>
+          <label for="historyreference">History & Reference</label>
+          <img class='icon'  src='./img/history.png'></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id='legobooks' name='legobooks'>
+          <label for='legobooks'class='grey'>LEGO Books</label>
+          <img class='icon'  src="./img/lego.png"></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id="marvel" name="marvel">
+          <label for="marvel">Marvel</label>
+          <img class='icon' src="./img/marvel.png"></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id="pregnancyparenting" name="pregnancyparenting">
+          <label for="pregnancyparenting">Pregnancy & Parenting</label>
+          <img class='icon'  src="./img/parenting.png"></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id="starwars" name='starwars'>
+          <label for="starwars">Star Wars</label>
+          <img class='icon'  src="./img/starwars.png"></img>
+        </div>
+        <div class='category'>
+          <input class='styled-checkbox' type="checkbox" id="travel" name='travel'>
+          <label for="travel">Travel</label>
+          <img class='icon' src="./img/travel.png"></img>
+        </div>
+      </div>
+      <p class='centre sanserif error'>Please Select at least one category above</p>
+      <div class='centre'>
+          <p class='sectionText'>Join our newsletter so we can send you book recommendations</p>
+          <div class='row'>
+            <div class='details-div'>
+              <input class='details' type='text' id='firstname' name='firstname' placeholder='First name *'>
+              <span class='leftText error'>Please enter your first name</span>
+            </div>
+            <div class='details-div'>
+              <input class='details' type='text' id='lastname' name='lastname' placeholder='Last name *'>
+              <span class='leftText error'>Please enter your last name</span>
+            </div>
+          </div>
+          <div class='row2'>
+            <div class='details-div'>
+              <input class='details' type='email' id='emailaddress' name='emailaddress' placeholder='Enter your email address *'>
+              <span class='leftText error'>Please enter your email address</span>
+            </div>
+            <input type="button" class='submit-button' onclick='validateForm()' value='Subscribe'>
+          </div>
+
+          <div class='row2 final'>
+            <input type='checkbox' id='ageconsent' name='ageconsent'>
+            <label for='ageconsent' class='sanserif grey'>I agree to the <span class='emphasis'>Privacy Policy</span> and I am over 16 years of age</label>
+            <p class='error'>Please agree to the privacy policy and minimum age</p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class='success'>
+      <div class='successLeft'>
+        <img src='./img/butterfly.png'>
+      </div>
+      <div class='successRight'>
+        <h1 class='successTitle'>Success!</h1>
+        <p class='successText'>Thank you for signing up to our newsletter</p>
+      </div>
+    </div>
+    <script>
+      function validateForm(){
+        let validFormData=false;
+        let validUserData=true;
+        let ageConsent = false;
+        const categories = document.querySelectorAll('[type=checkbox]');
+        const userDetails = document.querySelectorAll('.details');
+        for(let i=0;i<categories.length;i++){
+          if(validFormData==true){break};
+          (categories[i].checked==true)?validFormData=true:validFormData=false;
+        }
+        for(let i=0;i<userDetails.length;i++){
+          if(validUserData==false){break};
+          (userDetails[i].value!='')?validUserData=true:validUserData=false;
+        }
+        document.querySelector('#ageconsent').checked==true?ageConsent=true:ageConsent=false;
+        if (validFormData==false||validUserData==false||ageConsent==false){
+          const errorMessages = document.querySelectorAll('.error');
+          [].forEach.call(errorMessages, function(message) {
+              message.style.display="block";
+          });
+        }else{
+          document.querySelector('.container').style.display='none';
+          document.querySelector('.success').style.display='block';
+
+        }
+      }
+    </script>
+  </body>
+</HTML>

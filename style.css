@@ -1,0 +1,291 @@
+.category{
+  background-color: #fff;
+  display:inline-block;
+  font-family: Roboto, sans-serif;
+  height: 60px;
+  margin: 10px;
+  position: relative;
+  width: 30%;
+}
+.centre{
+  text-align: center;
+}
+.container{
+  background-color: #b4d8e6;
+  margin: 10%;
+}
+.details{
+  border: 0px;
+  height:60px;
+  margin:1%;
+  width:100%;
+
+}
+
+.details-div{
+  display: inline-block;
+  margin:1%;
+  width:43%;
+}
+
+.emphasis{
+  text-decoration: underline;
+}
+.error{
+  color:red;
+  display: none;
+  margin-left: 1%;
+  font-weight: bold;
+}
+.final{
+  padding-bottom: 8%;
+}
+.grey{
+  color:#686867;
+}
+.icon{
+  float:right;
+  margin: 10px;
+}
+input::placeholder{
+  font-size: 1.2em;
+  font-weight: bold;
+  padding:5%;
+}
+
+h1{
+  font-size: 3em;
+  font-weight: bold;
+  padding-top: 7%;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1, p, span{
+  font-family: Helvetica, sans-serif;
+}
+
+label{
+  color:#686867;
+  font-size: 1em;
+}
+.leftText{
+  text-align: left;
+}
+
+.red{color:red}
+.row{
+  margin: 0 auto;
+  width:66%;
+}
+
+.row2{
+  width:66%;
+  margin: 0 auto;
+  text-align:center;
+}
+
+.sanserif{
+  font-family: Helvetica, sans-serif;
+}
+
+.styled-checkbox {
+  opacity: 0;
+  position: absolute;
+}
+.styled-checkbox + label {
+  cursor: pointer;
+  display: inline-block;
+  margin: 18;
+  padding: 0;
+  position: relative;
+}
+.styled-checkbox + label:before {
+  background: white;
+  border:1px solid #dcdcdc;
+  content: '';
+  display: inline-block;
+  height: 24px;
+  margin-right: 10px;
+  vertical-align: text-top;
+  width: 24px;
+}
+
+
+.styled-checkbox:checked + label{
+  color: #8bb756;
+  font-weight: bold;
+}
+.styled-checkbox:checked + label:before {
+  background: #8bb756;
+}
+.styled-checkbox:checked + label:after {
+  box-shadow: 4px 1px 0 white, 6px 1px 0 white, 8px 1px 0 white, 8px -1px 0 white, 8px -3px 0 white, 8px -5px 0 white, 8px -7px 0 white, 8px -9px 0 white;
+  content: '';
+  height: 2px;
+  left: 5px;
+  position: absolute;
+  top: 9px;
+  transform: rotate(45deg);
+  width: 2px;
+}
+.submit-button{
+  background-color:#e30613;
+  border: 0;
+  color:#fff;
+  font-style: normal;
+  font-size: inherit;
+  height:60px;
+  margin: 15px;
+  text-transform: inherit;
+  vertical-align: top;
+  width:21%;
+}
+
+.success{
+  background-color: #c2d051;
+  display: none;
+  margin: 14% 10.5%;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.successLeft{
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.successRight{
+  display: inline-block;
+  vertical-align: middle;
+  width: 43%;
+}
+
+.successTitle{
+  color: #ffffff;
+  font-size: 3.5em;
+  margin:0;
+  text-align: left;
+}
+
+.successText{
+  font-size: 2em;
+  font-weight: bold;
+  margin:0;
+  text-align: left;
+}
+
+.sectionText{
+  color:#686867;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Condense categories into two columns */
+@media (max-width: 768px) {
+  .category {
+    width: 45%;;
+  }
+
+  .error{
+    font-size: .75em;
+  }
+
+  input::placeholder{
+    font-size: .9em;
+    font-weight: bold;
+    padding:5%;
+  }
+
+  label{
+    font-size: .75em;
+  }
+
+  .success{
+    padding: 40px 0;
+  }
+
+  .successTitle{
+    font-size: 3em;
+  }
+
+  .successText{
+    font-size: 1.5em;
+  }
+}
+/* Condense categories into one column */
+@media (max-width: 320px) {
+  .category {
+    margin:1%;
+    text-align: left;
+    width: 90%;
+  }
+
+  .container{
+    margin: 0%;
+    padding-top: 6.5%;
+  }
+
+  .details{
+    width: 95%;
+  }
+  .details-div{
+    margin: 0;
+    width:95%;
+  }
+
+  .error{
+    font-size: .8em;
+  }
+
+  h1{
+    font-size: 1.5em;
+  }
+
+  .main{
+    display: block;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+
+  }
+  .row, .row2{
+    margin:0;
+    width: 100%;
+  }
+
+  .sectionText{
+    color:#686867;
+    font-size: .8em
+  }
+  .submit-button{
+    width: 90%;
+  }
+
+  .success{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .successLeft{
+    padding: 30px 0;
+  }
+
+  .successTitle{
+    font-size:2em;
+    text-align: center;
+  }
+
+  .successRight{
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  .successText{
+    text-align: center;
+  }
+}
